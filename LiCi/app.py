@@ -18,7 +18,6 @@ Help:
     open an issue on github
 
 """
-import commands
 
 from inspect import getmembers, isclass
 from docopt import docopt
@@ -27,6 +26,7 @@ from . import __version__ as VERSION
 
 def main():
     """CLI entrypoint"""
+    import LiCi.commands
     options = docopt(__doc__, version=VERSION)
     
     # this loop matches the commands being run to the options provided by 
