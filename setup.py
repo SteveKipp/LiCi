@@ -7,6 +7,6 @@ extras_require = {},
 
 entry_points = {
     'console_scripts':[
-       'lici=lici.cli.main',
+       'lici=lici.app.main',
     ],
 },
