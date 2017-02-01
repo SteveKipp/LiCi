@@ -31,10 +31,10 @@ def main():
     
     # this loop matches the commands being run to the options provided by 
     # docopts
-    for k, v in options.iteritems():
-        if hassattr(commands, k):
-            module = getattr(commands, k)
-            commands = getmembers(module, isclass)
-            command = [command[1] for command in commands if command[0] != 'Base'][0]
+    for k, v in options.items():
+        if hasattr(LiCi.commands, k):
+            module = getattr(LiCi.commands, k)
+            LiCi.commands = getmembers(module, isclass)
+            command = [command[1] for command in LiCi.commands if command[0] != 'Base'][0]
             command = command(options)
             command.run()

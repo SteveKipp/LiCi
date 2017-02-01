@@ -12,7 +12,7 @@ setup(
 
         entry_points = {
             'console_scripts':[
-                'lici=LiCi.app.main',
+                'lici=LiCi.app:main',
             ],
         },
 )
