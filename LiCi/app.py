@@ -2,7 +2,7 @@
 lici
 
 Usage:
-    lici run
+    lici run <routine>
     lici -h | --help
     lici -v | --version
 
@@ -35,6 +35,7 @@ def main():
         if hasattr(LiCi.commands, k):
             module = getattr(LiCi.commands, k)
             LiCi.commands = getmembers(module, isclass)
-            command = [command[1] for command in LiCi.commands if command[0] != 'Base'][0]
+            command = [command[1] for command in LiCi.commands if command[0] 
+                    != 'Base' and command[0] != 'Routine'][0]
             command = command(options)
             command.run()

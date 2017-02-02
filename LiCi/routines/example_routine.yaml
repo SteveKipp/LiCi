@@ -1,0 +1,2 @@
+name: Example Routine
+build_commands: python setup.py install
