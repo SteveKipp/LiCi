@@ -10,3 +10,6 @@ class Run(Base):
         routine_name = self.options['<routine>']
         routine = Routine(routine_name)
         routine.details()
+        print("----------Routine Started----------")
+        routine.run()
+        print("----------Routine Complete----------")

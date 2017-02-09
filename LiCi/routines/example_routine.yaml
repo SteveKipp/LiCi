@@ -1,2 +1,2 @@
 name: Example Routine
-build_commands: python setup.py install
+build_commands: python -V

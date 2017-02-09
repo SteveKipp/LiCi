@@ -1,6 +1,8 @@
 import os
 import yaml
 
+from subprocess import call
+
 class Routine(object):
 
     def __init__(self, routine_yaml):
@@ -14,7 +16,11 @@ class Routine(object):
                 print(exc)
         self.name = routine['name']
         self.build_commands = routine['build_commands']
-        
+
     def details(self):
         print("Routine: ", self.name)
         print("Build Commands: ", self.build_commands)
+
+    def run(self):
+        commands = self.build_commands.split(" ")
+        call(commands)
