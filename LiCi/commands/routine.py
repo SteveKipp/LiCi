@@ -2,6 +2,7 @@ import os
 import yaml
 
 from subprocess import call
+from .options.remote import Remote
 
 class Routine(object):
 
@@ -15,6 +16,7 @@ class Routine(object):
             except yaml.YAMLError as exc:
                 print(exc)
         self.name = routine['name']
+        self.repo = routine['repo']
         self.build_commands = routine['build_commands']
 
     def details(self):
@@ -22,5 +24,6 @@ class Routine(object):
         print("Build Commands: ", self.build_commands)
 
     def run(self):
+        src_info = Remote(self.repo)
         commands = self.build_commands.split(" ")
         call(commands)

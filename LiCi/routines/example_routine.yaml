@@ -1,2 +1,3 @@
 name: Example Routine
+repo: https://github.com/SteveKipp/LiCi.git
 build_commands: python -V
