@@ -1,7 +1,7 @@
 import os
+import subprocess
 import yaml
 
-from subprocess import call
 from .options.remote import Remote
 
 class Routine(object):
@@ -25,5 +25,10 @@ class Routine(object):
 
     def run(self):
         src_info = Remote(self.repo)
+        print("**** Starting Build Commands ****")
+        print(self.build_commands)
+        print(" ")
         commands = self.build_commands.split(" ")
-        call(commands)
+        os.chdir(os.path.expanduser(src_info.location))
+        commands = subprocess.Popen(commands)
+        commands.wait()
